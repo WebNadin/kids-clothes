@@ -6,6 +6,7 @@ $(window).on('load', function () {
   }
   ;
   $('body').removeClass('loaded');
+
 });
 /* viewport width */
 function viewport() {
@@ -39,51 +40,60 @@ $(function () {
 
   /* components */
 
-  /*
 
-   if($('.styled').length) {
-   $('.styled').styler();
-   };
-   if($('.fancybox').length) {
-   $('.fancybox').fancybox({
-   margin  : 10,
-   padding  : 10
-   });
-   };
-   if($('.slick-slider').length) {
-   $('.slick-slider').slick({
-   dots: true,
-   infinite: false,
-   speed: 300,
-   slidesToShow: 4,
-   slidesToScroll: 4,
-   responsive: [
-   {
-   breakpoint: 1024,
-   settings: {
-   slidesToShow: 3,
-   slidesToScroll: 3,
-   infinite: true,
-   dots: true
-   }
-   },
-   {
-   breakpoint: 600,
-   settings: "unslick"
-   }
-   ]
-   });
-   };
-   if($('.scroll').length) {
-   $(".scroll").mCustomScrollbar({
-   axis:"x",
-   theme:"dark-thin",
-   autoExpandScrollbar:true,
-   advanced:{autoExpandHorizontalScroll:true}
-   });
-   };
+  //if ($('.styled').length) {
+  //  $('.styled').styler();
+  //}
+  //if ($('.fancybox').length) {
+  //  $('.fancybox').fancybox({
+  //    margin: 10,
+  //    padding: 10
+  //  });
+  //}
+  if ($('.slick-slider').length) {
+    console.log('test1');
+    $('.slick-slider').slick({
+      dots: true,
+      infinite: false,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true
+          }
+        },
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
+  //if ($('.scroll').length) {
+  //  $(".scroll").mCustomScrollbar({
+  //    axis: "x",
+  //    theme: "dark-thin",
+  //    autoExpandScrollbar: true,
+  //    advanced: {autoExpandHorizontalScroll: true}
+  //  });
+  //};
 
-   */
 
   /* components */
 
@@ -111,5 +121,13 @@ var handler = function () {
 $(window).bind('load', handler);
 $(window).bind('resize', handler);
 
-
+//$(document).ready(function () {
+//  $('.slick-slider').slick({
+//    dots: true,
+//    infinite: false,
+//    speed: 300,
+//    slidesToShow: 3,
+//    slidesToScroll: 3
+//  })
+//});
 
