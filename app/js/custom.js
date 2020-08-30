@@ -100,11 +100,12 @@ var handler = function () {
   var viewport_wid = viewport().width;
   var viewport_height = viewport().height;
 
-  if (viewport_wid <= 991) {
+  if (viewport_wid <= 767) {
+
     $('.js-showFilters').click(function (e) {
-      console.log('test');
       $(this).parent().toggle('.active');
     });
+
   }
 };
 $(window).bind('load', handler);
