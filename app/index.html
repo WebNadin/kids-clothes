@@ -27,18 +27,84 @@
       <div class="products">
 
         <section class="products__filters filters">
-          filters accordion>(select+btn)
-          <div class="filters__item filters__accordion accordion">
-            <div class="accordion__item">item</div>
-            <div class="accordion__item">item</div>
-          </div>
-          <div class="filters__item filters__btn">
-            <button type="button" class="btn js-showFilters">фильтры</button>
-          </div>
+
+          <form name="filtersForm" action="/" method="post">
+
+            <div class="filters__item filters__accordion accordion js-accordion">
+
+              <h3 class="accordion__item-title js-accordionTitle">Категории</h3>
+              <div class="accordion__item-body js-accordionBody">
+                категории список
+              </div>
+
+              <h3 class="accordion__item-title js-accordionTitle">Размер</h3>
+              <div class="accordion__item-body js-accordionBody">
+                категории список
+              </div>
+
+              <h3 class="accordion__item-title js-accordionTitle">Цвет</h3>
+              <div class="accordion__item-body js-accordionBody">
+                категории список
+              </div>
+
+              <h3 class="accordion__item-title js-accordionTitle active">Материал</h3>
+              <div class="accordion__item-body js-accordionBody">
+
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">Все</span>
+                </label>
+                <label class="accordion__radio-label">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text">100% хлопок</span>
+                </label>
+                <label class="accordion__radio-label">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text">Триктаж</span>
+                </label>
+                <label class="accordion__radio-label">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text">Шерсть</span>
+                </label>
+                <label class="accordion__radio-label">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text">Джинсовый</span>
+                </label>
+                <label class="accordion__radio-label">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text">Составной</span>
+                </label>
+                <label class="accordion__radio-label">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text">Вискоза</span>
+                </label>
+                <label class="accordion__radio-label">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text">Батист</span>
+                </label>
+
+              </div>
+
+            </div>
+            <div class="filters__item filters__btn">
+              <button type="button" class="btn js-showFilters">фильтры</button>
+            </div>
+            <button type="submit" class="btn filters__submit">Применить фильтр</button>
+
+          </form>
+
         </section>
+
         <div class="section products__item">
           <section class="products__cards cards">
-
             <a href="/" class="cards__item card">
 
               <span class="card__sign sign sign_info">
@@ -114,7 +180,6 @@
 
               <div class="card__price">123 грн</div>
             </a>
-
           </section>
 
           <aside class="products__recommendations recommendations">
@@ -368,7 +433,7 @@
 <script src="js/jquery-3.0.0.min.js"></script>
 <script src="js/jquery-migrate-1.4.1.min.js"></script>
 <!--<script src="js/components/jquery.fancybox.js" ></script>-->
-<!--<script src="js/components/jquery.formstyler.js" ></script>-->
+<script src="js/components/jquery.formstyler.js"></script>
 <script src="js/components/slick.js"></script>
 <!--<script src="js/components/jquery.mCustomScrollbar.js" ></script>-->
 <script src="js/custom.js"></script>
