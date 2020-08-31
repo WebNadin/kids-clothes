@@ -58,8 +58,8 @@ $(function () {
       slidesToShow: 3,
       slidesToScroll: 3,
       appendArrows: $('.arrows'),
-      prevArrow: '<div class="prev">prev</div>',
-      nextArrow: '<div class="next">next</div>',
+      prevArrow: '<div class="arrows__prev"><span class="arrows__symbol">&#8249</span></div>',
+      nextArrow: '<div class="arrows__next"><span class="arrows__symbol">&#8250</span></div>',
       responsive: [
         {
           breakpoint: 991,
