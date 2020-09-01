@@ -6,6 +6,8 @@ $(window).on('load', function () {
   }
   ;
   $('body').removeClass('loaded');
+  //$('#materials').mCustomScrollbar("scrollTo","top");
+
 
 });
 /* viewport width */
@@ -41,8 +43,8 @@ $(function () {
   /* components */
 
 
-  if ($('input').length) {
-    $('input').styler();
+  if ($('input, select').length) {
+    $('input, select').styler();
   }
   //if ($('.fancybox').length) {
   //  $('.fancybox').fancybox({
@@ -80,14 +82,11 @@ $(function () {
       ]
     });
   }
-  //if ($('.scroll').length) {
-  //  $(".scroll").mCustomScrollbar({
-  //    axis: "x",
-  //    theme: "dark-thin",
-  //    autoExpandScrollbar: true,
-  //    advanced: {autoExpandHorizontalScroll: true}
-  //  });
-  //};
+  if ($('.scroll').length) {
+    $('.scroll').mCustomScrollbar({
+      theme:"minimal-dark"
+    });
+  };
 
 
   /* components */
@@ -121,11 +120,11 @@ $(window).bind('resize', handler);
 document.addEventListener("DOMContentLoaded", () => {
   $('.js-accordionTitle.active').next()[0].style.display = 'block';
   $('.js-radioLabel').click(function () {
-    console.log('this = ',this);
-    console.log('radioText = ',$(this).children('.js-radioText'));
     $('.js-radioText').removeClass('active');
-    $(this).children('.js-radioText').addClass('active');
+    $(this).find('.js-radioText').addClass('active');
   });
+
+
   [].forEach.call(document.querySelectorAll('.js-accordionTitle'), function (item) {
 
     item.addEventListener('click', function () {

@@ -33,69 +33,114 @@
             <div class="filters__item filters__accordion accordion js-accordion">
 
               <h3 class="accordion__item-title js-accordionTitle">Категории</h3>
-              <div class="accordion__item-body js-accordionBody">
-                категории список
-              </div>
 
-              <h3 class="accordion__item-title js-accordionTitle">Размер</h3>
-              <div class="accordion__item-body js-accordionBody">
-                категории список
-              </div>
-
-              <h3 class="accordion__item-title js-accordionTitle">Цвет</h3>
-              <div class="accordion__item-body js-accordionBody">
-                категории список
-              </div>
-
-              <h3 class="accordion__item-title js-accordionTitle active">Материал</h3>
               <div class="accordion__item-body js-accordionBody">
 
                 <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text js-radioText">Все</span>
+                  <span class="accordion__radio-text js-radioText active">Все</span>
                 </label>
-                <label class="accordion__radio-label">
+                <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text">100% хлопок</span>
+                  <span class="accordion__radio-text js-radioText">Для девочек</span>
                 </label>
-                <label class="accordion__radio-label">
+                <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text">Триктаж</span>
+                  <span class="accordion__radio-text js-radioText">Для мальчиков</span>
                 </label>
-                <label class="accordion__radio-label">
+                <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text">Шерсть</span>
+                  <span class="accordion__radio-text js-radioText">Спортивная</span>
                 </label>
-                <label class="accordion__radio-label">
+                <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text">Джинсовый</span>
+                  <span class="accordion__radio-text js-radioText">Летняя</span>
                 </label>
-                <label class="accordion__radio-label">
+                <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text">Составной</span>
+                  <span class="accordion__radio-text js-radioText">Зимняя</span>
                 </label>
-                <label class="accordion__radio-label">
+                <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text">Вискоза</span>
+                  <span class="accordion__radio-text js-radioText">Нижнее белье</span>
                 </label>
-                <label class="accordion__radio-label">
+                <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
 
-                  <span class="accordion__radio-text">Батист</span>
+                  <span class="accordion__radio-text js-radioText">Аксессуары</span>
+                </label>
+
+              </div>
+
+              <h3 class="accordion__item-title js-accordionTitle">Размер</h3>
+
+              <div class="accordion__item-body js-accordionBody">
+                категории список
+              </div>
+
+              <h3 class="accordion__item-title js-accordionTitle">Цвет</h3>
+
+              <div class="accordion__item-body js-accordionBody">
+                категории список
+              </div>
+
+              <h3 class="accordion__item-title js-accordionTitle active">Материал</h3>
+
+              <div class="accordion__item-body js-accordionBody scroll" id="materials">
+
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText active">Все</span>
+                </label>
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">100% хлопок</span>
+                </label>
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">Трикотаж</span>
+                </label>
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">Шерсть</span>
+                </label>
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">Джинсовый</span>
+                </label>
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">Составной</span>
+                </label>
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">Вискоза</span>
+                </label>
+                <label class="accordion__radio-label js-radioLabel">
+                  <input class="accordion__radio" type="radio" name="radio">
+
+                  <span class="accordion__radio-text js-radioText">Батист</span>
                 </label>
 
               </div>
 
             </div>
             <div class="filters__item filters__btn">
-              <button type="button" class="btn js-showFilters">фильтры</button>
+              <button type="button" class="btn js-showFilters">Фильтры</button>
             </div>
             <button type="submit" class="btn filters__submit">Применить фильтр</button>
 
@@ -435,7 +480,8 @@
 <!--<script src="js/components/jquery.fancybox.js" ></script>-->
 <script src="js/components/jquery.formstyler.js"></script>
 <script src="js/components/slick.js"></script>
-<!--<script src="js/components/jquery.mCustomScrollbar.js" ></script>-->
+<script src="js/components/jquery.mCustomScrollbar.js"></script>
+<script src="js/components/jquery.mousewheel.js"></script>
 <script src="js/custom.js"></script>
 </body>
 </html>

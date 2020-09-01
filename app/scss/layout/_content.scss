@@ -63,6 +63,7 @@ h3 {
   background-color: $second-bg;
   padding: 10px 15px;
   @include border(1px, solid, $border);
+  font-weight: bold;
   min-height: 30px;
   width: 100%;
   height: 100%;
@@ -107,7 +108,7 @@ h3 {
   flex-flow: row wrap;
   flex: auto;
   padding: 2px;
-  transform: translateY(-2px);
+  transform: translateY(-4px);
   &__item {
     margin-right: 27px;
     margin-bottom: 18px;
@@ -208,8 +209,14 @@ h3 {
   &__item-title {
     position: relative;
     padding: 11px 20px;
-    border-bottom: 1px solid $border;
     font-weight: bold;
+    border-bottom: 1px solid $border;
+    &:last-child {
+      border-bottom: none;
+      .accordion__item-body {
+        display: block;
+      }
+    }
     &:after {
       content: '\203a';
       display: block;
@@ -225,7 +232,7 @@ h3 {
   &__item-body {
     display: none;
     max-height: 180px;
-    overflow: scroll;
+    overflow-y: scroll;
     padding-top: 8px;
   }
   &__radio-label {
@@ -240,8 +247,9 @@ h3 {
     height: 30px;
     white-space: nowrap;
     @include transition($default-transition);
-    &.active{
+    &.active {
       color: $active-color;
+      font-weight: bold;
     }
   }
   &__radio {
@@ -254,10 +262,8 @@ h3 {
     height: 28px;
   }
 }
-.accordion__item-title:last-child {
-  .accordion__item-body {
-    display: block;
-  }
+.accordion__item-title:last-child.active {
+  border-bottom: 1px solid $border;
 }
 .rating {
   position: relative;
@@ -365,9 +371,9 @@ h3 {
       color: $active-color;
     }
   }
-  .accordion__radio-label{
-    &:hover{
-      .accordion__radio-text{
+  .accordion__radio-label {
+    &:hover {
+      .accordion__radio-text {
         cursor: pointer;
         color: $active-color;
         @include transition($default-transition);
@@ -431,7 +437,6 @@ h3 {
     flex-direction: column;
     justify-content: center;
     &__filters {
-      height: 50px;
       margin: 0 auto 30px;
     }
   }
@@ -451,5 +456,15 @@ h3 {
   }
 }
 
+/* Scrollbar */
 
-
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+  width: 3px;
+  height: 60%;
+}
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+background-color: rgba(147, 222, 255, .7);
+}
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(72, 179, 203, .5);
+}
