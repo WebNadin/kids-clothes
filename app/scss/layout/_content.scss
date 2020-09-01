@@ -68,6 +68,7 @@ h3 {
   width: 100%;
   height: 100%;
   color: $active-color;
+  @include transition($default-transition);
 }
 /*
 ================================================================================
@@ -153,6 +154,7 @@ h3 {
     @include transition($default-transition);
     margin: 0 5px;
     text-align: center;
+    white-space: nowrap;
   }
 }
 .divider {
@@ -184,6 +186,10 @@ h3 {
     text-transform: uppercase;
   }
 }
+
+
+/* Accordion */
+
 .filters {
   position: relative;
   box-sizing: border-box;
@@ -211,6 +217,7 @@ h3 {
     padding: 11px 20px;
     font-weight: bold;
     border-bottom: 1px solid $border;
+    cursor: pointer;
     &:last-child {
       border-bottom: none;
       .accordion__item-body {
@@ -221,12 +228,14 @@ h3 {
       content: '\203a';
       display: block;
       @include rotate(90deg);
+      @include transition($default-transition);
       position: absolute;
       right: 15px;
       top: calc(50% - 9px);
       font-size: 24px;
       font-weight: bold;
-      color: $border;
+      color: $text-color;
+      opacity: .4;
     }
   }
   &__item-body {
@@ -262,9 +271,20 @@ h3 {
     height: 28px;
   }
 }
+.accordion__item-title.active {
+  &:after {
+    @include rotate(-90deg);
+    @include transition($default-transition);
+  }
+}
 .accordion__item-title:last-child.active {
   border-bottom: 1px solid $border;
 }
+
+/* end of Accordion */
+
+
+
 .rating {
   position: relative;
   height: 15px;
@@ -323,7 +343,7 @@ h3 {
 }
 .arrows {
   position: absolute;
-  bottom: 38px;
+  bottom: 40px;
   left: 0;
   z-index: 10;
   width: 100%;
@@ -335,6 +355,7 @@ h3 {
     font-weight: 700;
   }
   &__prev, &__next {
+    cursor: pointer;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -344,6 +365,7 @@ h3 {
     background-color: $base-bg;
     @include border(1px, solid, $border);
     @include radius(50%);
+    @include transition($default-transition);
     position: absolute;
     top: 0;
   }
@@ -352,14 +374,14 @@ h3 {
   }
   &__next {
     left: calc(50% + 25px);
+    .arrows__symbol {
+      transform: translate(1px, -2px);
+    }
   }
 }
 /*atomic*/
 .w-80 {
   width: 80%;
-}
-.red {
-  background-color: red;
 }
 @media not all and (hover: none) {
   .card:hover {
@@ -379,6 +401,17 @@ h3 {
         @include transition($default-transition);
       }
     }
+  }
+  .arrows {
+    &__prev:hover, &__next:hover {
+      @include border(1px, solid, rgba(68, 68, 68, .5));
+      @include transition($default-transition);
+    }
+  }
+  .btn:hover {
+    color: #fff;
+    background-color: $active-color;
+    @include transition($default-transition);
   }
 }
 @media screen and (max-width: 1200px) {
@@ -455,15 +488,14 @@ h3 {
     font-weight: 700;
   }
 }
-
 /* Scrollbar */
 
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   width: 3px;
   height: 60%;
 }
 .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
-background-color: rgba(147, 222, 255, .7);
+  background-color: rgba(147, 222, 255, .7);
 }
 .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background-color: rgba(72, 179, 203, .5);
