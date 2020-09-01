@@ -1,4 +1,114 @@
-//main styles
+/* Icons */
+
+.arrow {
+  position: relative;
+  cursor: pointer;
+  width: 10px;
+  height: 6px;
+  @include transition($default-transition);
+}
+.arrow-left {
+  position: absolute;
+  background-color: transparent;
+  top: 2px;
+  left: 0;
+  width: 6px;
+  height: 2px;
+  display: block;
+  transform: rotate(35deg);
+  float: right;
+  border-radius: 2px;
+}
+.arrow-left:after {
+  content: "";
+  background-color: rgba(68, 68, 68, .4);
+  width: 6px;
+  height: 2px;
+  display: block;
+  float: right;
+  border-radius: 6px 10px 10px 6px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+.arrow-right {
+  position: absolute;
+  background-color: transparent;
+  top: 2px;
+  left: 4px;
+  width: 6px;
+  height: 2px;
+  display: block;
+  transform: rotate(-35deg);
+  float: right;
+  border-radius: 2px;
+}
+.arrow-right:after {
+  content: "";
+  background-color: rgba(68, 68, 68, .4);
+  width: 6px;
+  height: 2px;
+  display: block;
+  float: right;
+  border-radius: 10px 6px 6px 10px;
+  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
+  z-index: -1;
+}
+.open .arrow-left:after {
+  transform-origin: center center;
+  transform: rotate(-70deg);
+}
+.open .arrow-right:after {
+  transform-origin: center center;
+  transform: rotate(70deg);
+}
+.rating {
+  position: relative;
+  height: 15px;
+}
+.stars {
+  width: 92px;
+  &_empty {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 46px);
+    overflow: hidden;
+    width: 90px;
+  }
+  &_full {
+    left: calc(50% - 46px);
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}
+/* Dropdown */
+
+.f-select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 4px 5px 20px;
+  height: 40px;
+  &__arrow {
+    position: absolute;
+    right: 15px;
+    top: calc(50% - 3px);
+    z-index: 100;
+  }
+  &__body {
+    max-width: 160px;
+    &.opened {
+      ~ .arrow {
+        @include rotate(180deg);
+      }
+    }
+  }
+}
+/* end of Dropdown */
+
+///main styles
 
 .main-wrapper {
   padding: 0 0 0 0;
@@ -209,7 +319,6 @@ h3 {
     height: 100%;
   }
 }
-
 .accordion {
   &__item-title {
     display: flex;
@@ -260,7 +369,6 @@ h3 {
     height: 28px;
   }
 }
-
 .accordion__item-title.active {
   border-bottom: 1px solid $border;
   .arrow {
@@ -268,97 +376,8 @@ h3 {
     @include transition($default-transition);
   }
 }
-
 .accordion__item-select {
   border-top: 1px solid $border;
-}
-
-
-/* end of Accordion */
-
-/* Icons */
-
-.arrow {
-  position: relative;
-  cursor: pointer;
-  width: 10px;
-  height: 6px;
-  @include transition($default-transition);
-}
-.arrow-left {
-  position: absolute;
-  background-color: transparent;
-  top: 2px;
-  left: 0;
-  width: 6px;
-  height: 2px;
-  display: block;
-  transform: rotate(35deg);
-  float: right;
-  border-radius: 2px;
-}
-.arrow-left:after {
-  content: "";
-  background-color: rgba(68, 68, 68, .4);
-  width: 6px;
-  height: 2px;
-  display: block;
-  float: right;
-  border-radius: 6px 10px 10px 6px;
-  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
-  z-index: -1;
-}
-.arrow-right {
-  position: absolute;
-  background-color: transparent;
-  top: 2px;
-  left: 4px;
-  width: 6px;
-  height: 2px;
-  display: block;
-  transform: rotate(-35deg);
-  float: right;
-  border-radius: 2px;
-}
-.arrow-right:after {
-  content: "";
-  background-color: rgba(68, 68, 68, .4);
-  width: 6px;
-  height: 2px;
-  display: block;
-  float: right;
-  border-radius: 10px 6px 6px 10px;
-  transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8);
-  z-index: -1;
-}
-.open .arrow-left:after {
-  transform-origin: center center;
-  transform: rotate(-70deg);
-}
-.open .arrow-right:after {
-  transform-origin: center center;
-  transform: rotate(70deg);
-}
-.rating {
-  position: relative;
-  height: 15px;
-}
-.stars {
-  width: 92px;
-  &_empty {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 46px);
-    overflow: hidden;
-    width: 90px;
-  }
-  &_full {
-    left: calc(50% - 46px);
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
 }
 /* end of Accordion */
 

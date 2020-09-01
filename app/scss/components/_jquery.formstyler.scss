@@ -23,19 +23,19 @@ $radio-checked-shadow: 0 0 1px 0px rgba(0,0,0,0.05);
 $radio-disabled-opacity: 0.5;
 
 /* select */
-$select-bg: #F5F5F5;
-$select-border-color: #C3C3C3;
+$select-bg: #f3f3f3;
+$select-border-color: $border;
 $select-border-width: 1px;
-$select-border-radius: 3px;
-$select-shadow: 0 0 2px 0px rgba(0,0,0,0);
-$select-height: 40px;
-$select-padding: 10px 40px 0 15px;
+$select-border-radius: 0;
+$select-shadow: inset 0px 1px 2px 0px rgba(0,0,0,0.1);;
+$select-height: 31px;
+$select-padding: 6px 32px 0 10px;
 $select-font-size:14px;
 $select-line-height:18px;
 $select-color:#000;
 $select-font:Arial, sans-serif;
 
-$select-opened-border-color: #000;
+$select-opened-border-color: $border;
 
 $trigger-arrow-bg:none;
 $trigger-border-width:5px;
@@ -43,8 +43,8 @@ $trigger-arrow-color:#000;
 
 $dropdown-bg:#FFF;
 $dropdown-border-width:1px;
-$dropdown-border-color:#000;
-$dropdown-border-radius:4px;
+$dropdown-border-color:$border;
+$dropdown-border-radius:0;
 $dropdown-shadow: 0 0 2px 0px rgba(0,0,0,0.1);
 $dropdown-item-padding: 5px 10px 5px 10px;
 
@@ -53,8 +53,8 @@ $dropdown-item-font-size:$select-font-size;
 $dropdown-item-line-height:$select-line-height;
 $dropdown-item-font:$select-font;
 
-$dropdown-item-active-color:#FFF;
-$dropdown-item-active-bg:#000;
+$dropdown-item-active-color:$active-color;
+$dropdown-item-active-bg:$dropdown-bg;
 
 $dropdown-item-disbled-color:#ccc;
 $dropdown-item-disbled-bg:none;
@@ -239,7 +239,7 @@ $dropdown-item-disbled-bg:none;
 	width: 0;
 	height: 0;
 	overflow: hidden;
-	border-top: $trigger-border-width solid $trigger-arrow-color;
+	border-top: $trigger-border-width solid transparent;
 	border-right: $trigger-border-width solid transparent;
 	border-left: $trigger-border-width solid transparent;
 	background: $trigger-arrow-bg;

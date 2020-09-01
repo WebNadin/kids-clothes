@@ -131,8 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     $(this).next('.js-accordionBody').toggleClass('active');
   });
 
-
-
 });
 
 
