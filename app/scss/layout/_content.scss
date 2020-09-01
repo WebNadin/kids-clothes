@@ -102,6 +102,7 @@
     &.opened {
       ~ .arrow {
         @include rotate(180deg);
+        z-index: 101;
       }
     }
   }
@@ -584,11 +585,6 @@ h3 {
 /* end of Media */
 
 /* Browsers */
-
-@-moz-document url-prefix()
-{
-    body { background: grey; color: white }
-}
 
 /* end of Browsers */
 

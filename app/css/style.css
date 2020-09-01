@@ -875,7 +875,7 @@ footer { background: #000; height: 80px; text-align: left; width: 100%; min-widt
 
 .f-select__body { max-width: 160px; }
 
-.f-select__body.opened ~ .arrow { -ms-transform: rotate(180deg); transform: rotate(180deg); }
+.f-select__body.opened ~ .arrow { -ms-transform: rotate(180deg); transform: rotate(180deg); z-index: 101; }
 
 /* end of Dropdown */
 .main-wrapper { padding: 0 0 0 0; min-width: 320px; width: 100%; position: relative; overflow: hidden; min-height: 100%; display: -ms-flexbox; display: flex; flex-direction: column; -ms-flex-direction: column; justify-content: flex-start; -webkit-justify-content: flex-start; -ms-flex-pack: start; }
@@ -1053,8 +1053,6 @@ h3 { font-size: 13px; line-height: 17px; color: #2b2b2b; font-family: "Open Sans
 
 /* end of Media */
 /* Browsers */
-@-moz-document url-prefix() { body { background: grey; color: white; } }
-
 /* end of Browsers */
 
 /*# sourceMappingURL=style.css.map */
