@@ -209,6 +209,7 @@ h3 {
     height: 100%;
   }
 }
+
 .accordion {
   &__item-title {
     display: flex;
@@ -217,15 +218,18 @@ h3 {
     position: relative;
     padding: 11px 15px 11px 20px;
     font-weight: bold;
-    border-bottom: 1px solid $border;
+    border-top: 1px solid $border;
     cursor: pointer;
+    &:first-child {
+      border-top: 1px solid transparent;
+    }
   }
   &__item-body {
     display: none;
     max-height: 180px;
     overflow-y: scroll;
     padding-top: 8px;
-    &.active{
+    &.active {
       display: block;
     }
   }
@@ -256,15 +260,20 @@ h3 {
     height: 28px;
   }
 }
+
 .accordion__item-title.active {
+  border-bottom: 1px solid $border;
   .arrow {
     @include rotate(180deg);
     @include transition($default-transition);
   }
 }
-.accordion__item-title:last-child.active {
-  border-bottom: 1px solid $border;
+
+.accordion__item-select {
+  border-top: 1px solid $border;
 }
+
+
 /* end of Accordion */
 
 /* Icons */
