@@ -930,15 +930,11 @@ h3 { font-size: 13px; line-height: 17px; color: #2b2b2b; font-family: "Open Sans
 
 .filters__btn { display: none; -ms-flex-pack: center; justify-content: center; -ms-flex-align: center; align-items: center; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
-.accordion__item-title { position: relative; padding: 11px 20px; font-weight: bold; border-bottom: 1px solid #e1e1e1; cursor: pointer; }
-
-.accordion__item-title:last-child { border-bottom: none; }
-
-.accordion__item-title:last-child .accordion__item-body { display: block; }
-
-.accordion__item-title:after { content: '\203a'; display: block; -ms-transform: rotate(90deg); transform: rotate(90deg); transition: all 0.2s linear; position: absolute; right: 15px; top: calc(50% - 9px); font-size: 24px; font-weight: bold; color: #444; opacity: .4; }
+.accordion__item-title { display: -ms-flexbox; display: flex; -ms-flex-align: center; align-items: center; -ms-flex-pack: justify; justify-content: space-between; position: relative; padding: 11px 15px 11px 20px; font-weight: bold; border-bottom: 1px solid #e1e1e1; cursor: pointer; }
 
 .accordion__item-body { display: none; max-height: 180px; overflow-y: scroll; padding-top: 8px; }
+
+.accordion__item-body.active { display: block; }
 
 .accordion__radio-label { position: relative; height: 30px; width: 100%; }
 
@@ -948,11 +944,26 @@ h3 { font-size: 13px; line-height: 17px; color: #2b2b2b; font-family: "Open Sans
 
 .accordion__radio { position: absolute; width: 100%; left: 0; top: 0; opacity: 0; border: 1px solid transparent; height: 28px; }
 
-.accordion__item-title.active:after { -ms-transform: rotate(-90deg); transform: rotate(-90deg); transition: all 0.2s linear; }
+.accordion__item-title.active .arrow { -ms-transform: rotate(180deg); transform: rotate(180deg); transition: all 0.2s linear; }
 
 .accordion__item-title:last-child.active { border-bottom: 1px solid #e1e1e1; }
 
 /* end of Accordion */
+/* Icons */
+.arrow { position: relative; cursor: pointer; width: 10px; height: 6px; transition: all 0.2s linear; }
+
+.arrow-left { position: absolute; background-color: transparent; top: 2px; left: 0; width: 6px; height: 2px; display: block; -ms-transform: rotate(35deg); transform: rotate(35deg); float: right; border-radius: 2px; }
+
+.arrow-left:after { content: ""; background-color: rgba(68, 68, 68, 0.4); width: 6px; height: 2px; display: block; float: right; border-radius: 6px 10px 10px 6px; transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8); z-index: -1; }
+
+.arrow-right { position: absolute; background-color: transparent; top: 2px; left: 4px; width: 6px; height: 2px; display: block; -ms-transform: rotate(-35deg); transform: rotate(-35deg); float: right; border-radius: 2px; }
+
+.arrow-right:after { content: ""; background-color: rgba(68, 68, 68, 0.4); width: 6px; height: 2px; display: block; float: right; border-radius: 10px 6px 6px 10px; transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8); z-index: -1; }
+
+.open .arrow-left:after { -ms-transform-origin: center center; transform-origin: center center; -ms-transform: rotate(-70deg); transform: rotate(-70deg); }
+
+.open .arrow-right:after { -ms-transform-origin: center center; transform-origin: center center; -ms-transform: rotate(70deg); transform: rotate(70deg); }
+
 .rating { position: relative; height: 15px; }
 
 .stars { width: 92px; }
@@ -961,6 +972,7 @@ h3 { font-size: 13px; line-height: 17px; color: #2b2b2b; font-family: "Open Sans
 
 .stars_full { left: calc(50% - 46px); overflow: hidden; position: absolute; top: 0; width: 100%; }
 
+/* end of Accordion */
 /*Slider*/
 .multiple-items .card { text-align: center; margin: 3px auto; }
 

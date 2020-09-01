@@ -21,18 +21,27 @@
 
   <main class="content">
     <div class="wrapper">
-
       <h1 class="content__title">Одежда для девочек</h1>
 
-      <div class="products">
+      <!-- BEGIN PRODUCTS CARD BLOCK -->
 
+      <div class="products">
         <section class="products__filters filters">
 
-          <form name="filtersForm" action="/" method="post">
+          <!-- BEGIN FILTERS FORM -->
 
+          <form name="filtersForm" action="/" method="post">
             <div class="filters__item filters__accordion accordion js-accordion">
 
-              <h3 class="accordion__item-title js-accordionTitle">Категории</h3>
+              <!-- BEGIN ACCORDION ITEM -->
+
+              <h3 class="accordion__item-title js-accordionTitle">
+                Категории
+                <div class="arrow">
+                  <div class="arrow-left"></div>
+                  <div class="arrow-right"></div>
+                </div>
+              </h3>
 
               <div class="accordion__item-body js-accordionBody scroll">
 
@@ -43,12 +52,12 @@
 
                 <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
-                  <span class="accordion__radio-text js-radioText">Для девочек</span>
+                  <span class="accordion__radio-text js-radioText">Платье</span>
                 </label>
 
                 <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
-                  <span class="accordion__radio-text js-radioText">Для мальчиков</span>
+                  <span class="accordion__radio-text js-radioText">Комплекты</span>
                 </label>
 
                 <label class="accordion__radio-label js-radioLabel">
@@ -79,11 +88,48 @@
 
               </div>
 
-              <h3 class="accordion__item-title js-accordionTitle" id="accordionSize">Размер</h3>
-              <h3 class="accordion__item-title js-accordionTitle" id="accordionColor">Цвет</h3>
+              <!-- ACCORDION ITEM EOF -->
 
-              <h3 class="accordion__item-title js-accordionTitle active">Материал</h3>
-              <div class="accordion__item-body js-accordionBody scroll">
+              <!-- BEGIN ACCORDION ITEM -->
+
+              <div class="filters__select">
+                <h3 class="filters__select-title">
+                  Размер
+                </h3>
+
+                <select class="select">
+                  <option class="select__item">42</option>
+                  <option>44</option>
+                  <option>46</option>
+                  <option>48</option>
+                  <option>50</option>
+                  <option>52</option>
+                  <option>54</option>
+                  <option selected>56</option>
+                </select>
+
+              </div>
+
+              <!-- ACCORDION ITEM EOF -->
+
+              <!-- BEGIN ACCORDION ITEM -->
+
+              <h3 class="accordion__item-title" id="accordionColor">
+                Цвет
+              </h3>
+
+              <!-- ACCORDION ITEM EOF -->
+
+              <!-- BEGIN ACCORDION ITEM -->
+
+              <h3 class="accordion__item-title js-accordionTitle active">
+                Материал
+                <div class="arrow">
+                  <div class="arrow-left"></div>
+                  <div class="arrow-right"></div>
+                </div>
+              </h3>
+              <div class="accordion__item-body js-accordionBody scroll active">
 
                 <label class="accordion__radio-label js-radioLabel">
                   <input class="accordion__radio" type="radio" name="radio">
@@ -128,6 +174,8 @@
 
               </div>
 
+              <!-- ACCORDION ITEM EOF -->
+
             </div>
 
             <div class="filters__item filters__btn">
@@ -135,6 +183,8 @@
             </div>
             <button type="submit" class="btn filters__submit">Применить фильтр</button>
           </form>
+
+          <!-- FILTERS FORM EOF-->
 
         </section>
 
@@ -433,6 +483,8 @@
         </div>
 
       </div>
+
+      <!-- PRODUCTS CARD BLOCK EOF   -->
 
     </div>
   </main>

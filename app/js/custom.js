@@ -4,10 +4,7 @@ $(window).on('load', function () {
   } else {
     $('body').addClass('web');
   }
-  ;
   $('body').removeClass('loaded');
-  //$('#materials').mCustomScrollbar("scrollTo","top");
-
 
 });
 /* viewport width */
@@ -89,11 +86,6 @@ $(function () {
   }
   ;
 
-
-  //$('#categories').mCustomScrollbar({
-  //  theme: "minimal-dark"
-  //});
-
   /* components */
 
 
@@ -123,8 +115,7 @@ $(window).bind('resize', handler);
 
 
 document.addEventListener("DOMContentLoaded", () => {
-  $('.js-accordionTitle.active').next()[0].style.display = 'block';
-  $('.js-accordionTitle.active:after').next()[0].style.transformRotate = '90deg';
+
   $('.js-radioLabel').click(function () {
     $('.js-radioText').removeClass('active');
     $(this).find('.js-radioText').addClass('active');
@@ -135,24 +126,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $(this).parent().get(0).style.display = 'none';
   });
 
-
-  [].forEach.call(document.querySelectorAll('.js-accordionTitle'), function (item) {
-
-    item.addEventListener('click', function () {
-      let display = (this.nextElementSibling.style.display === 'block') ? 'none' : 'block';
-      [].forEach.call(this.parentNode.querySelectorAll('.js-accordionBody'), function (panels) {
-        panels.style.display = 'none';
-        panels.style.opacity = '1';
-      });
-      [].forEach.call(this.parentNode.querySelectorAll('.js-accordionTitle'), function (titles) {
-        titles.classList.remove("active");
-      });
-      if (this.classList.contains("active")) {
-        this.classList.remove("active")
-      } else this.classList.add("active");
-      this.nextElementSibling.style.display = display;
-    });
+  $('.js-accordionTitle').click(function () {
+    $(this).toggleClass('active');
+    $(this).next('.js-accordionBody').toggleClass('active');
   });
+
+
 
 });
 
