@@ -144,20 +144,20 @@ p {
 }
 h1 {
   @include font($font-size-h1, $line-height-h1, $title-color);
-  font-family: $title-font-family;
+  font-family: $custom-title-font-family;
   padding: 15px 0 15px 0;
   font-weight: 400;
 }
 h2 {
   @include font($font-size-h2, $line-height-h2, $title-color);
-  font-family: $title-font-family;
+  font-family: $custom-font-family;
   padding: 18px 0 15px 0;
   font-weight: 400;
 }
 h3 {
   @include font($font-size-h3, $line-height-h3, $title-color);
-  font-family: $title-font-family;
-  padding: 17px 0 18px 0;
+  font-family: $custom-font-family;
+  padding: 18px 0 18px 0;
   font-weight: 700;
 }
 /* text position */
@@ -195,7 +195,7 @@ h3 {
   -webkit-flex-grow: 1;
   background: url("../img/bg-pattern.jpg") repeat, #f9f9f9;
   &__title {
-    margin: 25px 0 27px 25px;
+    margin: 25px 0 22px 25px;
     letter-spacing: -3px;
   }
 }
@@ -353,6 +353,7 @@ h3 {
     top: 0;
     height: 30px;
     white-space: nowrap;
+    color: $text-color;
     @include transition($default-transition);
     &.active {
       color: $active-color;
@@ -458,6 +459,22 @@ h3 {
 .w-80 {
   width: 80%;
 }
+/* Scrollbar */
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  width: 3px;
+  height: 60%;
+}
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
+  background-color: rgba(147, 222, 255, .7);
+}
+.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(72, 179, 203, .5);
+}
+
+
+/* Media */
+
 @media not all and (hover: none) {
   .card:hover {
     @include border(1px, solid, rgba(72, 179, 203, .3));
@@ -563,15 +580,15 @@ h3 {
     font-weight: 700;
   }
 }
-/* Scrollbar */
 
-.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-  width: 3px;
-  height: 60%;
+/* end of Media */
+
+/* Browsers */
+
+@-moz-document url-prefix()
+{
+    body { background: grey; color: white }
 }
-.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar {
-  background-color: rgba(147, 222, 255, .7);
-}
-.mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-  background-color: rgba(72, 179, 203, .5);
-}
+
+/* end of Browsers */
+
