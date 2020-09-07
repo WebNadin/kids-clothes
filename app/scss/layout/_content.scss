@@ -137,6 +137,7 @@
   margin: 0 auto;
   position: relative;
 }
+
 /* titles */
 p {
   @include font($base-font-size, $base-line-height, $text-color);
@@ -472,8 +473,6 @@ h3 {
 .mCS-minimal-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
   background-color: rgba(72, 179, 203, .5);
 }
-
-
 /* Media */
 
 @media not all and (hover: none) {
@@ -581,7 +580,6 @@ h3 {
     font-weight: 700;
   }
 }
-
 /* end of Media */
 
 /* Browsers */
